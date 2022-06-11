@@ -36,7 +36,7 @@
 <body class="line-numbers">
     <header>
         <div class="container">
-            <h1>./ practical 6</h1>
+            <h1> practical 6</h1>
         </div>
     </header>
     <div class="container">
@@ -88,97 +88,7 @@
         </section>
         <br />
         <section>
-            <h1>html</h1>
-            <pre><code class="language-html">&lt;form name=&quot;register_form&quot; onsubmit=&quot;return false&quot;&gt;
-    &lt;label for=&quot;name&quot;&gt;Full Name&lt;/label&gt;
-    &lt;br /&gt;
-    &lt;input type=&quot;text&quot; id=&quot;name&quot; placeholder=&quot;Full Name&quot; autocomplete=&quot;off&quot; /&gt;
-    &lt;br /&gt;
-    &lt;span class=&quot;error&quot;&gt;
-        &lt;p id=&quot;name_error&quot;&gt;&lt;/p&gt;
-    &lt;/span&gt;
-    &lt;br /&gt;
-    &lt;label for=&quot;email&quot;&gt;Email :&lt;/label&gt;
-    &lt;br /&gt;
-    &lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;Email&quot; autocomplete=&quot;off&quot; /&gt;
-    &lt;br /&gt;
-    &lt;span class=&quot;error&quot;&gt;
-        &lt;p id=&quot;email_error&quot;&gt;&lt;/p&gt;
-    &lt;/span&gt;
-    &lt;br /&gt;
-    &lt;label for=&quot;telephone&quot;&gt;Telephone/Mobile :&lt;/label&gt;
-    &lt;br /&gt;
-    &lt;input type=&quot;tel&quot; id=&quot;telephone&quot; placeholder=&quot;Telephone/Mobile&quot; autocomplete=&quot;off&quot; /&gt;
-    &lt;br /&gt;
-    &lt;span class=&quot;error&quot;&gt;
-        &lt;p id=&quot;telephone_error&quot;&gt;&lt;/p&gt;
-    &lt;/span&gt;
-    &lt;br /&gt;
-    &lt;label for=&quot;gender&quot;&gt;Gender :&lt;/label&gt;
-    &lt;br /&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot; /&gt; Male
-    &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot; /&gt; Female
-    &lt;br /&gt;
-    &lt;span class=&quot;error&quot;&gt;
-        &lt;p id=&quot;gender_error&quot;&gt;&lt;/p&gt;
-    &lt;/span&gt;
-    &lt;br /&gt;
-    &lt;label for=&quot;password&quot;&gt;Password :&lt;/label&gt;
-    &lt;br /&gt;
-    &lt;input type=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Password&quot; autocomplete=&quot;off&quot; /&gt;
-    &lt;br /&gt;
-    &lt;span class=&quot;error&quot;&gt;
-        &lt;p id=&quot;password_error&quot;&gt;&lt;/p&gt;
-    &lt;/span&gt;
-    &lt;br /&gt;
-    &lt;button type=&quot;submit&quot; onclick=&quot;validate_form()&quot;&gt;Submit&lt;/button&gt;
-&lt;/form&gt;</code>
-        </pre>
-            <h1>js</h1>
-            <pre><code class="language-js">&lt;script src=&quot;https://unpkg.com/sweetalert/dist/sweetalert.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-    function isNumeric(value) {
-        return /^-?\d+$/.test(value);
-    }
-    const validate_form = () =&gt; {
-        let names = [&quot;name&quot;, &quot;email&quot;, &quot;telephone&quot;, &quot;gender&quot;, &quot;password&quot;];
-        names.forEach(function (element) {
-                    document.getElementById(element + &quot;_error&quot;).textContent = &quot;&quot;;
-        });
-        let errorCount = 0;
-        names.forEach(function (element) {
-            if (element === &quot;telephone&quot;) {
-                let val = document.forms[&quot;register_form&quot;][element].value;
-                if(!isNumeric(val)){
-                    document.getElementById(element + &quot;_error&quot;).textContent = element.toUpperCase().replace(&quot;_&quot;, &quot; &quot;) + &quot; must be in number&quot;; ++errorCount
-                }
-                if(val.length !== 10){
-                    document.getElementById(element + &quot;_error&quot;).textContent = element.toUpperCase().replace(&quot;_&quot;, &quot; &quot;) + &quot; must be 10 digit&quot;; ++errorCount
-                }
-            }else if(element === &quot;password&quot;){
-                let val = document.forms[&quot;register_form&quot;][element].value;
-                if(val.length &lt;= 8){
-                    document.getElementById(element + &quot;_error&quot;).textContent = element.toUpperCase().replace(&quot;_&quot;, &quot; &quot;) + &quot; must be greater than 8 characters&quot;; ++errorCount
-                }
-            } else {
-                let val = document.forms[&quot;register_form&quot;][element].value;
-                if (val === null || val === &quot;&quot;) {
-                    document.getElementById(element + &quot;_error&quot;).textContent =
-                        element.toUpperCase().replace(&quot;_&quot;, &quot; &quot;) + &quot; must be filled out&quot;;
-                        ++errorCount;
-                }
-            }
-        });
-        if(errorCount){
-            return false
-        }else{
-            swal(&quot;Submitted SuccessFully!&quot;, &quot;Your form successfully submitted!&quot;, &quot;success&quot;)
-            document.forms[&quot;register_form&quot;].reset();
-        }
-    };
-&lt;/script&gt;</code>
-        </pre>
-        </section>
+            
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
